@@ -3,11 +3,11 @@ import Pagination from '@mui/material/Pagination';
 import { createTheme, makeStyles, ThemeProvider } from '@mui/material';
 import './CustomPagination.css'
 
-const useStyles=makeStyles((theme) => ({
-  pagination: {
-    color: 'red',
-  },
-}));
+// const useStyles=makeStyles((theme) => ({
+//   pagination: {
+//     color: 'red',
+//   },
+// }));
 
 const theme = createTheme({
   palette: {
