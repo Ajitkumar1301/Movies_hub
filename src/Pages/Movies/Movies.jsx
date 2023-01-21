@@ -6,7 +6,7 @@ const Movies = () => {
   const[content,setContent]=useState([]);
 
   const fetchTrending=async()=>{
-      const {data}=await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=15e383204c1b8a09dbfaaa4c01ed7e17&language=ta-IN&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_watch_monetization_types=flatrate=${process.env.REACT_APP_API_KEY}`);
+      const {data}=await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}`);
       console.log(data);
       setContent(data.results);
 
