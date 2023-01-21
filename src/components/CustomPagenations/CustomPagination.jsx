@@ -1,24 +1,11 @@
+import { Pagination } from '@mui/material';
 import React from 'react'
-import Pagination from '@mui/material/Pagination';
-import { createTheme, makeStyles, ThemeProvider } from '@mui/material';
 import './CustomPagination.css'
 
-// const useStyles=makeStyles((theme) => ({
-//   pagination: {
-//     color: 'red',
-//   },
-// }));
 
-const theme = createTheme({
-  palette: {
-    secondary: {
-      main: '#0af4fc',
-    },
-  },
-});
 
 const CustomPagination = ({setPage,numofPages =10}) => {
-  const classes = useStyles();
+
 const handlepagechange=(page)=>{
   setPage(page);
   window.scroll(0,0);
@@ -32,17 +19,19 @@ const handlepagechange=(page)=>{
   marginTop:'10',
  }}>
   
-  <ThemeProvider theme={theme}>
     
   <Pagination count={numofPages} 
-     className={classes.pagination}
+  sx={{
+    "Button.MuiPaginationItem-root":{
+      color:'cyan'
+  }
+  }}
 onChange={(e)=>handlepagechange(e.target.textContent)}
 variant="outlined"
-color='secondary'
+color='primary'
 hideNextButton
 hidePrevButton />
 
-    </ThemeProvider>
 
  </div>
   )
