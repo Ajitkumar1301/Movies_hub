@@ -33,9 +33,7 @@ const Search = () => {
   useEffect(() => {
     window.scroll(0, 0);
     fetchSearch();
-    // eslint-disable-next-line
   }, [type, page]);
-
   
   return (
     <div>
@@ -65,8 +63,6 @@ const Search = () => {
           indicatorColor="info"
           sx={{
             "& button":{  color:'whitesmoke'},
-            "& button:focus":{color:'#34e5eb'}
-
           }}
           onChange={(event, newValue) => {
             setType(newValue);
