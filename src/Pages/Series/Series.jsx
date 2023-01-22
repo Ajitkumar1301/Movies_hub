@@ -13,7 +13,7 @@ const Series = () => {
   
     const fetchTrending=async()=>{
         const {data}=await axios.get(`https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`);
-        // console.log(data);
+        console.log(data);
         setContent(data.results);
         setNumofPages(data.total_pages)
     }    
@@ -26,7 +26,7 @@ const Series = () => {
   
    return (
     <>
-    <span className='subtitle'>Movies</span>
+    <span className='subtitle'>Tv Series</span>
     <div className='trending'>      
         {content && content.map((c)=><SingleContent 
         key={c.id}
@@ -34,7 +34,7 @@ const Series = () => {
          poster={c.poster_path}
          title={c.title || c.name} 
          date={c.first_air_date || c.release_date}
-         media_type={c.media_type}
+         media_type="tv"
          vote_average={c.vote_average}/>)
   }</div> 
   <CustomPagination setPage={setPage} numofPages={numofPages} />   
